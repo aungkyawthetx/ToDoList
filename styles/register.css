@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #334977 !important;
+}
+
+.container .card  {
+  width: 320px;
+  height: auto;
+  background-color: #F2F6FF;
+}
+
+.card-body .btn-signup {
+  background-color: #202D48 !important;
+  width: 100%;
+  padding: 8px 10px;
+}
+
+.card-body .btn-signup:hover {
+  opacity: 0.9;
+}
+.card-body .btn-signup:active {
+  opacity: 0.8;
+}
+
+.card-body .btn-google-login {
+  background-color: #fff;
+  width: 100%;
+  padding: 8px 10px;
+}
+.card-body .btn-google-login:hover {
+  opacity: 0.9;
+}
+
+.card-body input {
+  padding: 10px !important;
+}
+
+.card-body input[type="password"] {
+  padding: 10px in !important;
+}
+
+.card .google {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
