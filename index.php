@@ -33,7 +33,7 @@
               <div class="d-flex align-items-center">
                 <h1 class="fs-2"> My To-Do</h1>
                 <div class="d-flex align-items-center ms-auto">
-                  <button class="btn btn-primary btn-lg fs-4 d-none d-md-inline" onclick="togglePopup()"> <i class="fa-solid fa-circle-plus"></i> New Task </button>
+                  <button class="btn btn-dark rounded-1 fs-4 d-none d-md-inline" onclick="togglePopup()"> New To-Do </button>
                   <span onclick="togglePopup()" class="d-md-none"> <i class="fa-solid fa-circle-plus text-primary icon-btn"></i> </span>
                   <h3 class="fs-3 mx-3">
                     <?php 
@@ -67,15 +67,15 @@
                 <div class="card rounded border-0 bg-transparent">
                     <div class="card-body">
                         <form action="create.php" method="post" class=" d-flex flex-column">
-                          <input type="text" name="title" class="form-control mb-3 rounded-2 fs-5" placeholder="Title" required>
-                          <textarea name="discription" rows="5" class="form-control rounded-2 fs-5 mb-3" placeholder="Description" required></textarea>
+                          <input type="text" name="title" class="form-control mb-3 rounded-2 fs-5" placeholder="todo title" required>
+                          <textarea name="discription" rows="5" class="form-control rounded-2 fs-5 mb-3" placeholder="desctiption" required></textarea>
                           <input name="date" type="date" class="form-control rounded-2 mb-3 p-3 fs-5" required>
                           <label for="status" class="fs-5 mb-1 text-info ms-1 text-uppercase">Please choose status*</label>
                           <select name="status" class="form-control rounded-2 mb-3" required>
                             <option value="To Start" class="form-control fs-5">To Start</option>
                             <option value="In Progress" class="form-control fs-5">In Progress</option>
                           </select>
-                          <button name="btnAddTask" class="btn btn-primary btn-lg fs-4 border-0 mb-2">Add Task</button>
+                          <button name="btnAddTask" class="btn btn-primary btn-lg fs-4 border-0 mb-2">Submit</button>
                           <button type="button" class="btn btn-secondary btn-lg fs-4 border-0" onclick="togglePopup()">Cancel</button>
                         </form>
                     </div>

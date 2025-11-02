@@ -13,19 +13,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->execute(['username' => $username]);
 
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
-  
+
   if (empty($username) || empty($password)) {
     $nullErrorMsg = '*username and password are required';
-  }
-  elseif ($user && password_verify($password, $user['password'])) {
+  } elseif ($user && password_verify($password, $user['password'])) {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
     header("Location: index.php");
-  }
-  else {
+    exit();
+  } else {
     $invalid = '*Invalid username or password';
   }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

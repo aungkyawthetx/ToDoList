@@ -2,10 +2,10 @@
 // session_start();
 include('config.php');
 
-if (empty($_SESSION['user_id'])) {
-  header("Location: login.php");
-  exit();
-}
+// if (empty($_SESSION['user_id'])) {
+//   header("Location: login.php");
+//   exit();
+// }
   // Show Tasks
   $user_id = $_SESSION['user_id'];
 

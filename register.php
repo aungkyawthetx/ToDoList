@@ -5,7 +5,7 @@ $NullErrorMsg = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $rawPassword = $_POST['password']; // Get raw password
 
     // username check 
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
@@ -14,13 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->rowCount() > 0) {
         $usernameDuplicateErr = 'username already exists!';
     } 
-    elseif (empty($username) || empty($password)) {
-      $NullErrorMsg = 'username and password are required!';
+    elseif (empty($username) || empty($rawPassword)) {
+        $NullErrorMsg = 'username and password are required!';
     }
     else {
-        //insert
+        $hashedPassword = password_hash($rawPassword, PASSWORD_BCRYPT);
         $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-        $stmt->execute(['username' => $username, 'password' => $password]);
+        $stmt->execute(['username' => $username, 'password' => $hashedPassword]);
 
         if ($stmt->rowCount() > 0) {
             header("Location: login.php");
@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
