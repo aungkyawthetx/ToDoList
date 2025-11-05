@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>To-Do LiST</title>
+  <title>To-Do List</title>
   <link rel="stylesheet" href="styles/register.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -48,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container d-flex align-items-center justify-content-center">
     <div class="card py-2 px-4 rounded-4">
       <div class="card-header bg-transparent border-0 text-center">
-        <h2 class="mb-0">To-Do LiST</h2>
-        <p class="mb-0 mt-2">Join our tasks</p>
+        <h2 class="mb-0">To-Do List</h2>
+        <p class="mb-0 mt-2">Join Us</p>
       </div>
       <div class="card-body">
       <span class="text-danger"><?php echo $usernameDuplicateErr; ?></span>
