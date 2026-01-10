@@ -1,5 +1,4 @@
 <?php
-  // session_start();
   include('dashboard.php');
 ?>
 <!DOCTYPE html>
@@ -7,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>To-Do LiST</title>
+  <title>2-Do List</title>
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -17,23 +16,34 @@
   <div class="container-fluid">
     <div class="row py-2 px-0 main-container">
       <div class="col-lg-2 sidebar py-2">
-        <h1 class="text-white mb-3"> <i class="fa-solid fa-list-check"></i> To-Do LiST</h1>
-        <div class="mt-0" id="clock">
-          <?php echo date("h:i:s"); ?>
+        <h1 class="text-white mb-4 fw-bold d-flex align-items-center gap-2">2-Do List</h1>
+        <div class="clock-card">
+          <div class="clock-card-header">
+            <i class="bi bi-clock"></i>
+            <span>Current Time</span>
           </div>
-          <a class="fs-3 mt-3 rounded-2" href="index.php"> <i class="bi bi-grid"></i> Dashboard</a>
+          <div class="clock-card-body">
+            <div class="clock-display" id="clock">
+              <?php echo date("h:i:s"); ?>
+            </div>
+            <div class="clock-date">
+              <?php echo date("l, F j, Y"); ?>
+            </div>
+          </div>
+        </div>
+        <a class="fs-4 mt-3 rounded-2 d-flex align-items-center gap-2" href="index.php"> <i class="bi bi-grid"></i> Dashboard</a>
       </div>
 
       <div class="col-lg-10 right-container">
         <div class="card rounded">
           <div class="card-header bg-transparent">
-            <p class="fs-5 text-secondary fw-bold"> <i class="fa-solid fa-list-check fs-4"></i> Dashboard Overview</p>
+            <p class="fs-5 text-secondary fw-semibold mb-0"> <i class="fa-solid fa-list-check fs-4"></i> Dashboard Overview</p>
           </div>
           <div class="card-body">
               <div class="d-flex align-items-center">
-                <h1 class="fs-2"> My To-Do</h1>
+                <h1 class="fs-2 fw-bold mb-0">My tasks</h1>
                 <div class="d-flex align-items-center ms-auto">
-                  <button class="btn btn-dark rounded-1 fs-4 d-none d-md-inline" onclick="togglePopup()"> New To-Do </button>
+                  <button class="btn btn-dark rounded-2 fs-4 px-3 d-none d-md-inline" onclick="togglePopup()"> New To-Do </button>
                   <span onclick="togglePopup()" class="d-md-none"> <i class="fa-solid fa-circle-plus text-primary icon-btn"></i> </span>
                   <h3 class="fs-3 mx-3">
                     <?php 
@@ -174,12 +184,12 @@
 
   //clock 
   function updateClock() {
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        document.getElementById('clock').innerHTML = `${hours}:${minutes}:${seconds}`;
-    }
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').innerHTML = `${hours}:${minutes}:${seconds}`;
+  }
     setInterval(updateClock, 1000);
     updateClock();
 </script>
