@@ -29,8 +29,8 @@
       <i class="fa-solid fa-chevron-down"></i>
       <div class="user-menu" id="user-menu">
         <a href="profile.php">Profile</a>
-        <form action="logout.php" method="POST">
-          <button type="submit" class="btn-logout text-danger">Logout</button>
+        <form action="logout.php" method="post">
+          <button type="submit" name="btnLogout" class="btn-logout text-danger">Logout</button>
         </form>
       </div>
     </div>

@@ -76,7 +76,7 @@
     transition: background 0.2s ease;
   }
   .user-menu button {
-      display: block;
+    display: block;
     padding: 10px 14px;
     width: 100%;
     font-size: 0.9rem;
@@ -210,6 +210,9 @@
   }
   .task-card {
     background: #F2F6FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 14px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -242,6 +245,11 @@
   .btn-add-task:hover {
     background: #2a3e6a;
     transform: translateY(-1px);
+  }
+  .btn-delete-task {
+    border-radius: 10px;
+    background-color: inherit;
+    border: none;
   }
   /* ---------- Popup ---------- */
   .overlay {
