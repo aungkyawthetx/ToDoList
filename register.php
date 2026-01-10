@@ -62,14 +62,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="mb-3">
               <input type="password" name="password" class="form-control rounded-2" placeholder="Password">
             </div>
-            <button type="submit" class="text-white btn btn-primary rounded-2 border-0 fw-bold btn-signup"> Sign up <i class="fa-solid fa-user-plus"></i>  </button>
+            <button type="submit" class="text-white btn btn-primary rounded-2 border-0 fw-bold btn-signup"> Sign up  </button>
             <div class="d-flex align-items-center my-3">
               <hr class="flex-grow-1">
               <span class="mx-2 text-muted">OR</span>
               <hr class="flex-grow-1">
             </div>
             <div class="d-flex justify-content-center mt-4">
-              <span>Already have an account? <a href="login.php">Sign in here</a></span>
+              <span>Already have an account? <a href="login.php">Login</a></span>
             </div>
         </form>
       </div>

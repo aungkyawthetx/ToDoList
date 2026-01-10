@@ -1,50 +1,85 @@
+/* Layout */
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #334977 !important;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #2f3f6b, #334977);
 }
 
-.container .card  {
-  width: 320px;
-  height: auto;
+/* Card */
+.container .card {
+  width: 100%;
+  max-width: 360px;
   background-color: #F2F6FF;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding: 2rem 1.5rem;
 }
 
+/* Inputs */
+.card-body input {
+  width: 100%;
+  padding: 12px !important;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #cfd6e4;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.card-body input:focus {
+  border-color: #334977;
+  box-shadow: 0 0 0 3px rgba(51, 73, 119, 0.15);
+  outline: none;
+}
+
+/* Sign Up Button */
 .card-body .btn-signup {
   background-color: #202D48 !important;
   width: 100%;
-  padding: 8px 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: all 0.2s ease;
 }
 
 .card-body .btn-signup:hover {
-  opacity: 0.9;
+  opacity: 0.95;
+  transform: translateY(-1px);
 }
+
 .card-body .btn-signup:active {
-  opacity: 0.8;
-}
-
-.card-body .btn-google-login {
-  background-color: #fff;
-  width: 100%;
-  padding: 8px 10px;
-}
-.card-body .btn-google-login:hover {
+  transform: translateY(0);
   opacity: 0.9;
 }
 
-.card-body input {
-  padding: 10px !important;
+/* Google Sign Up Button */
+.card-body .btn-google-login {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #dce2f0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  margin-top: 10px;
 }
 
-.card-body input[type="password"] {
-  padding: 10px in !important;
+.card-body .btn-google-login:hover {
+  background-color: #f5f7fb;
 }
 
+/* Google Icon */
 .card .google {
   width: 18px;
   height: 18px;
-  margin-right: 10px;
 }
