@@ -1,7 +1,7 @@
 <aside class="col-lg-2 sidebar">
   <h5>To Do App</h5>
   <a href="index.php"><i class="fa-solid fa-house"></i> Home</a>
-  <a href="test.php"><i class="fa-solid fa-list-check"></i> Tasks</a>
+  <a href="tasks.php"><i class="fa-solid fa-list-check"></i> Tasks</a>
   <a href="#"><i class="fa-solid fa-calendar"></i> Calendar</a>
   <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
 
