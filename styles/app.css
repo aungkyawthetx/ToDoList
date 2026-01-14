@@ -343,7 +343,7 @@ button:hover {
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 1100;
+  z-index: 100;
 }
 
 .mobile-menu-btn {
