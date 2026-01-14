@@ -1,4 +1,4 @@
-<aside class="col-lg-2 sidebar">
+<aside class="col-lg-2 sidebar" id="sidebar">
   <h5>To Do App</h5>
   <a href="index.php"><i class="fa-solid fa-house"></i> Home</a>
   <a href="tasks.php"><i class="fa-solid fa-list-check"></i> Tasks</a>

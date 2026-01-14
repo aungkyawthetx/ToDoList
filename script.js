@@ -54,3 +54,12 @@
       mobileUserMenu.style.display = 'none';
     }
   });
+
+  function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('show');
+  document.querySelector('.sidebar-overlay').classList.toggle('show');
+}
+
+function toggleMobileUserMenu() {
+  document.getElementById('mobile-user-menu').classList.toggle('show');
+}
