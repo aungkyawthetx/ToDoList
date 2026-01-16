@@ -11,6 +11,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/app.css" />
   <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/calendar.css" />
 </head>
 
 <body>
@@ -35,6 +36,6 @@
       <button type="submit" name="btnAddTask" class="btn btn-primary w-100">Add To-Do</button>
     </form>
   </div>
-  <script src="script.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>

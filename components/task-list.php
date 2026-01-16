@@ -7,7 +7,7 @@
           <?= date('M d, Y', strtotime($task->created_date)) ?>
         </div>
       </div>
-      <form action="delete.php?id=<?php echo $task->id; ?>" method="POST" onsubmit="return confirm('Are you sure you want to delete this task?');">
+      <form action="delete.php?id=<?php echo $task->id; ?>" method="POST">
         <input type="hidden" name="task_id" value="<?= $task->id ?>">
         <button type="submit" name="btnDeleteTask" class="btn-delete-task text-danger" title="Delete Task">
           <i class="fa-solid fa-trash-can"></i>

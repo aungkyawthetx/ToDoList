@@ -1,0 +1,106 @@
+/* Card */
+.calendar-card {
+  background: #121826;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: #e5e7eb;
+}
+
+/* Header */
+.calendar-header {
+  gap: 10px;
+}
+
+.calendar-header h5 {
+  font-size: 1rem;
+}
+
+.calendar-header button {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background: #1f2937;
+  border: none;
+  color: #e5e7eb;
+}
+
+.calendar-header button:hover {
+  background: #374151;
+}
+
+/* Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+/* Day Names */
+.calendar-day {
+  text-align: center;
+  font-weight: 600;
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+/* Cells */
+.calendar-cell {
+  min-height: 70px;
+  border-radius: 10px;
+  background: #1f2937;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+}
+
+.calendar-cell:hover {
+  background: #374151;
+}
+
+/* Empty */
+.calendar-cell.empty {
+  background: transparent;
+  cursor: default;
+}
+
+/* Today */
+.calendar-cell.today {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.4);
+}
+
+
+/* Tablets */
+@media (max-width: 992px) {
+  .calendar-cell {
+    min-height: 60px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 576px) {
+  .calendar-card {
+    padding: 12px;
+  }
+
+  .calendar-header h5 {
+    font-size: 0.95rem;
+  }
+
+  .calendar-day {
+    font-size: 0.7rem;
+  }
+
+  .calendar-cell {
+    min-height: 48px;
+    padding: 4px;
+    font-size: 0.75rem;
+  }
+}

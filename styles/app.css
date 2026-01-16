@@ -173,7 +173,7 @@ button:hover {
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #9fb0d8;
   text-align: center;
 }
@@ -224,14 +224,7 @@ button:hover {
   margin-bottom: 0.4rem;
 }
 
-.clock-date {
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-/* ---------- Main Content ---------- */
+/* main */
 .right-container {
   padding: 1.5rem;
 }
@@ -264,7 +257,7 @@ button:hover {
   margin-top: 4px;
 }
 
-/* ---------- Add Task Button ---------- */
+/* add button */
 .btn-add-task {
   background: #334977;
   color: #fff;
@@ -286,7 +279,7 @@ button:hover {
   border: none;
 }
 
-/* ---------- Popup ---------- */
+/* popup */
 .overlay {
   position: fixed;
   inset: 0;

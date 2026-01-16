@@ -1,30 +1,35 @@
 <?php
-session_start();
-include 'config.php';
+  session_start();
+  include 'config.php';
 
-$nullErrorMsg = '';
-$invalid = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-
-  $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-  $stmt->execute(['username' => $username]);
-
-  $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  if (empty($username) || empty($password)) {
-    $nullErrorMsg = '*username and password are required';
-  } elseif ($user && password_verify($password, $user['password'])) {
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['username'] = $user['username'];
+  if(isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit();
-  } else {
-    $invalid = '*Invalid username or password';
   }
-}
+
+  $nullErrorMsg = '';
+  $invalid = '';
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnLogin'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+    $stmt->execute(['username' => $username]);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (empty($username) || empty($password)) {
+      $nullErrorMsg = '*username and password are required';
+    } elseif ($user && password_verify($password, $user['password'])) {
+      $_SESSION['user_id'] = $user['id'];
+      $_SESSION['username'] = $user['username'];
+      header("Location: index.php");
+      exit();
+    } else {
+      $invalid = '*Invalid username or password';
+    }
+  }
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>To-Do List</title>
+  <title>To Do App</title>
   <link rel="stylesheet" href="styles/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -46,16 +51,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2 class="mb-0">Welcome back</h2>
       </div>
       <div class="card-body">
-        <form method="post">
-            <span class="text-danger"><?php echo $nullErrorMsg; ?></span>
+        <form method="POST">
+            <p class="text-danger fst-italic mb-1 small"><?php echo $nullErrorMsg; ?></p>
             <span class="text-danger"> <?php echo $invalid; ?> </span>
             <div class="mb-3">
-              <input type="text" name="username" class="form-control rounded-2" placeholder="Username">
+              <input type="text" name="username" class="form-control rounded-2" placeholder="Enter your username">
             </div>
             <div class="mb-3">
-              <input type="password" name="password" class="form-control rounded-2" placeholder="Password">
+              <input type="password" name="password" class="form-control rounded-2" placeholder="password">
             </div>
-            <button type="submit" class="text-white btn btn-primary rounded-2 border-0 fw-bold btn-login fs-5"> Login </button>
+            <button type="submit" name="btnLogin" class="text-white btn btn-primary rounded-2 border-0 fw-bold btn-login fs-5"> Login </button>
             <div class="d-flex align-items-center my-3">
               <hr class="flex-grow-1">
               <span class="mx-2 text-muted">OR</span>
