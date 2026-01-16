@@ -229,11 +229,19 @@ button:hover {
   padding: 1.5rem;
 }
 
+.task-view {
+  display: flex;
+  align-items: center; justify-content: space-between !important;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .task-card {
   background: #F2F6FF;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-radius: 14px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -256,8 +264,7 @@ button:hover {
   color: #6b7280;
   margin-top: 4px;
 }
-
-/* add button */
+/* buttons */
 .btn-add-task {
   background: #334977;
   color: #fff;
@@ -267,13 +274,11 @@ button:hover {
   border: none;
   transition: background 0.2s ease, transform 0.2s ease;
 }
-
 .btn-add-task:hover {
   background: #2a3e6a;
   transform: translateY(-1px);
 }
-
-.btn-delete-task {
+.btn-delete-task, .btn-edit-task {
   border-radius: 10px;
   background-color: inherit;
   border: none;

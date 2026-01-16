@@ -56,10 +56,22 @@
   });
 
   function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('show');
-  document.querySelector('.sidebar-overlay').classList.toggle('show');
-}
+    document.getElementById('sidebar').classList.toggle('show');
+    document.querySelector('.sidebar-overlay').classList.toggle('show');
+  }
 
-function toggleMobileUserMenu() {
-  document.getElementById('mobile-user-menu').classList.toggle('show');
-}
+  function toggleMobileUserMenu() {
+    document.getElementById('mobile-user-menu').classList.toggle('show');
+  }
+
+  function enableEdit(button) {
+    const card = button.closest(".task-card");
+    card.querySelector(".task-view").classList.add("d-none");
+    card.querySelector(".task-edit").classList.remove("d-none");
+  }
+
+  function cancelEdit(button) {
+    const card = button.closest(".task-card");
+    card.querySelector(".task-edit").classList.add("d-none");
+    card.querySelector(".task-view").classList.remove("d-none");
+  }
