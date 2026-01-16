@@ -12,15 +12,16 @@
   <link rel="stylesheet" href="styles/app.css" />
   <link rel="stylesheet" href="styles/nav.css" />
   <link rel="stylesheet" href="styles/calendar.css" />
+  <link rel="stylesheet" href="styles/coming-soon.css" />
 </head>
 
 <body>
   <div class="container-fluid">
     <div class="row">
-      <?php include __DIR__ . '/components/sidebar.php'; ?>
+      <?php include __DIR__ . '/sidebar.php'; ?>
       <!-- Main -->
       <main class="col-lg-10 right-container">
-        <?php include __DIR__ . '/components/nav.php'; ?>
+        <?php include __DIR__ . '/nav.php'; ?>
         <?php echo $content ?? '' ?>
       </main>
     </div>

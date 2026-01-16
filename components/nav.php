@@ -1,6 +1,6 @@
 <div class="top-navbar d-none d-lg-flex justify-content-between align-items-center mb-4">
   <div class="navbar-left">
-    <h5 class="page-title mb-0">Dashboard</h5>
+    <h5 class="page-title mb-0"> <?= $pageTitle ?? 'Dashboard' ?> </h5>
   </div>
 
   <div class="navbar-right d-flex align-items-center gap-3">

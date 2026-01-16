@@ -1,6 +1,7 @@
 <?php
   session_start();
   include('config.php');
+  $paageTitle = 'Dashboard';
 
   if (!$_SESSION['user_id']) {
     header("Location: login.php");
@@ -27,5 +28,5 @@
   include __DIR__ . '/components/task-list.php';
   
   $content = ob_get_clean();
-  include __DIR__ . '/layout.php';
+  include __DIR__ . '/components/layout.php';
 ?>

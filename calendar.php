@@ -1,5 +1,11 @@
 <?php
-ob_start();
+  ob_start();
+  session_start();
+  if(!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+  }
+  $pageTitle = 'Calendar';
 ?>
 
 <div class="container-fluid py-4">
@@ -10,9 +16,7 @@ ob_start();
           <button class="btn btn-light" id="prevMonth">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-
           <h5 class="mb-0" id="calendarTitle"></h5>
-
           <button class="btn btn-light" id="nextMonth">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
@@ -27,15 +31,14 @@ ob_start();
           <div class="calendar-day">Fri</div>
           <div class="calendar-day">Sat</div>
         </div>
-
         <div class="calendar-grid" id="calendarBody"></div>
       </div>
     </div>
   </div>
 </div>
-
 <script src="scripts/calendar.js"></script>
 
 <?php
-$content = ob_get_clean();
-include __DIR__ . '/layout.php';
+  $content = ob_get_clean();
+  include __DIR__ . '/components/layout.php';
+?>

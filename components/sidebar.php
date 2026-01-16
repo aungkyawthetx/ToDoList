@@ -2,11 +2,10 @@
   <h5>To Do App</h5>
   <a href="index.php"><i class="fa-solid fa-house"></i> Home</a>
   <a href="calendar.php"><i class="fa-solid fa-calendar"></i> Calendar</a>
-  <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+  <a href="settings.php"><i class="fa-solid fa-gear"></i> Settings</a>
   <div class="clock-card">
     <div class="clock-card-header">
-      <i class="fa-regular fa-clock"></i>
-      <span>CLOCK</span>
+      <span>Clock</span>
     </div>
     <div class="clock-card-body">
       <div class="clock-display" id="clock">
