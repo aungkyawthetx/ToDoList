@@ -60,7 +60,7 @@
             <div class="mb-3">
               <input type="password" name="password" class="form-control rounded-2" placeholder="password">
             </div>
-            <button type="submit" name="btnLogin" class="text-white btn btn-primary rounded-2 border-0 fw-bold btn-login fs-5"> Login </button>
+            <button type="submit" name="btnLogin" class="text-white btn rounded-2 border-0 fw-semibold btn-login"> Login </button>
             <div class="d-flex align-items-center my-3">
               <hr class="flex-grow-1">
               <span class="mx-2 text-muted">OR</span>

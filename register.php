@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div>
               <input type="password" name="password" class="form-control rounded-2" placeholder="password">
             </div>
-            <button type="submit" class="text-white btn btn-primary rounded-2 border-0 fw-bold btn-signup"> Register  </button>
+            <button type="submit" class="text-white btn rounded-2 border-0 fw-semibold btn-signup"> Register  </button>
             <div class="d-flex align-items-center my-3">
               <hr class="flex-grow-1">
               <span class="mx-2 text-muted">OR</span>

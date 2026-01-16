@@ -12,7 +12,7 @@ body {
 /* Card */
 .container .card {
   width: 100%;
-  max-width: 360px;
+  max-width: 400px;
   background-color: #F2F6FF;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -23,6 +23,7 @@ body {
 /* Inputs */
 .card-body input {
   width: 100%;
+  font-style: italic;
   padding: 12px !important;
   margin-bottom: 15px;
   border-radius: 8px;
@@ -32,7 +33,6 @@ body {
 }
 
 .card-body input:focus {
-  border-color: #334977;
   box-shadow: 0 0 0 3px rgba(51, 73, 119, 0.15);
   outline: none;
 }
@@ -49,37 +49,5 @@ body {
 }
 
 .card-body .btn-signup:hover {
-  opacity: 0.95;
-  transform: translateY(-1px);
-}
-
-.card-body .btn-signup:active {
-  transform: translateY(0);
   opacity: 0.9;
-}
-
-/* Google Sign Up Button */
-.card-body .btn-google-login {
-  background-color: #ffffff;
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #dce2f0;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.2s ease;
-  margin-top: 10px;
-}
-
-.card-body .btn-google-login:hover {
-  background-color: #f5f7fb;
-}
-
-/* Google Icon */
-.card .google {
-  width: 18px;
-  height: 18px;
 }
