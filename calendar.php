@@ -22,7 +22,7 @@
           </button>
         </div>
 
-        <div class="calendar-grid">
+        <div class="calendar-grid mb-2">
           <div class="calendar-day">Sun</div>
           <div class="calendar-day">Mon</div>
           <div class="calendar-day">Tue</div>
