@@ -1,34 +1,42 @@
 <?php
+session_start();
 include 'config.php';
 $usernameDuplicateErr = '';
 $NullErrorMsg = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $rawPassword = $_POST['password']; // Get raw password
+  $username = $_POST['username'];
+  $rawPassword = $_POST['password']; // Get raw password
 
-    // username check 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-    $stmt->execute(['username' => $username]);
+  // username check 
+  $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+  $stmt->execute(['username' => $username]);
+
+  if ($stmt->rowCount() > 0) {
+    $usernameDuplicateErr = 'username already exists!';
+  } 
+  elseif (empty($username) || empty($rawPassword)) {
+    $NullErrorMsg = '*username and password are required!';
+  }
+  else {
+    $hashedPassword = password_hash($rawPassword, PASSWORD_BCRYPT);
+    $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+    $stmt->execute([
+      'username' => $username,
+      'password' => $hashedPassword
+    ]);
 
     if ($stmt->rowCount() > 0) {
-        $usernameDuplicateErr = 'username already exists!';
+      // get newly created user id
+      $_SESSION['user_id'] = $pdo->lastInsertId();
+      $_SESSION['username'] = $username;
+      header("Location: index.php");
+      exit;
     } 
-    elseif (empty($username) || empty($rawPassword)) {
-        $NullErrorMsg = '*username and password are required!';
-    }
     else {
-        $hashedPassword = password_hash($rawPassword, PASSWORD_BCRYPT);
-        $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-        $stmt->execute(['username' => $username, 'password' => $hashedPassword]);
-
-        if ($stmt->rowCount() > 0) {
-            header("Location: login.php");
-            exit();
-        } else {
-            echo "Registration failed!";
-        }
+      echo "Registration failed!";
     }
+  }
 }
 
 ?>
