@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles/nav.css" />
   <link rel="stylesheet" href="styles/calendar.css" />
   <link rel="stylesheet" href="styles/coming-soon.css" />
-</head>
+</head> 
 
 <body>
   <div class="container-fluid">
