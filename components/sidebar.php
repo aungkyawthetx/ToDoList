@@ -16,4 +16,4 @@
   <div class="sidebar-footer">
     &copy; 2026 To Do App.
   </div>
-</aside>
+</aside>  

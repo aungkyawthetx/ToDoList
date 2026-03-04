@@ -1,3 +1,21 @@
+<?php
+  $navDisplayName = trim((string)($_SESSION['username'] ?? 'Guest'));
+  if ($navDisplayName === '') {
+    $navDisplayName = 'Guest';
+  }
+
+  $navWords = preg_split('/\s+/', $navDisplayName);
+  $navFirst = strtoupper(substr((string)$navWords[0], 0, 1));
+  $navLast = strtoupper(substr((string)$navWords[count($navWords) - 1], 0, 1));
+  if ($navFirst === '') {
+    $navFirst = 'G';
+  }
+  if ($navLast === '') {
+    $navLast = $navFirst;
+  }
+  $navInitials = $navFirst . $navLast;
+?>
+
 <div class="top-navbar d-none d-lg-flex justify-content-between align-items-center mb-4">
   <div class="navbar-left">
     <h5 class="page-title mb-0"> <?= $pageTitle ?? 'Dashboard' ?> </h5>
@@ -16,7 +34,7 @@
     </div>
 
     <div class="user-dropdown" id="user-btn">
-      <img src="https://ui-avatars.com/api/?name=<?= $_SESSION['username'] ?? 'Guest' ?>&background=334977&color=fff" alt="User Avatar">
+       <img src="https://ui-avatars.com/api/?name=<?= $_SESSION['username'] ?? 'Guest' ?>&background=334977&color=fff" alt="User Avatar">
       <span class="user-name">
         <?php 
           if(isset($_SESSION['username'])) {
@@ -56,8 +74,8 @@
     </div>
 
     <div class="mobile-user" id="mobile-user-btn">
-      <img src="https://ui-avatars.com/api/?name=<?= $_SESSION['username'] ?? 'Guest' ?>&background=334977&color=fff" alt="User" onclick="toggleMobileUserMenu()"/>
-      <span><?= $_SESSION['username'] ?? 'Guest' ?></span>
+      <div class="mobile-user-initial-avatar" onclick="toggleMobileUserMenu()"><?= htmlspecialchars($navInitials) ?></div>
+      <span><?= htmlspecialchars($navDisplayName) ?></span>
       <i class="fa-solid fa-chevron-down"></i>
       <div class="mobile-user-menu" id="mobile-user-menu">
         <a href="profile.php" class="text-dark text-decoration-none">Profile</a>
